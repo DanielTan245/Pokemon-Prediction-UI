@@ -40,7 +40,7 @@ if demo_password == st.secrets["DEMO_PASSWORD"]:
                         response = requests.post(API_URL, headers=headers, files=files)
                         if response.status_code == 200:
                             prediction = response.json()
-                            st.success(f"Predicted Class Index: {prediction['class_index']}")
+                            st.success(f"Predicted Class Index: {prediction['class_prediction']}")
                         else:
                             st.error(f"API Error {response.status_code}: {response.text}")
                     except Exception as e:
